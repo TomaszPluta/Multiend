@@ -8,21 +8,12 @@
 #include <atomic>
 #include <condition_variable>
 #include "../include/ThreadPool.hpp"
+#include "../include/Message.hpp"
 
-//message encapsulation (((data)id)ack)src,dst)
-template <typename T>
-class MessageApi{
-    public:
-        virtual T GetMessage() = 0;
-        virtual bool Send() = 0;
-    private:
-        T m_id;
-        T m_data;
-};
+
+
 
 class Observer{
-
-
 };
 
 

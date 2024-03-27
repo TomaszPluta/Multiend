@@ -1,6 +1,7 @@
-#include <iostream>
+#ifndef THREADPOOL_HPP
+#define THREADPOOL_HPP
+
 #include <vector>
-#include <memory>
 #include <thread>
 #include <queue>
 #include <functional>
@@ -8,13 +9,11 @@
 #include <atomic>
 #include <condition_variable>
 
-#ifndef THREADPOOL_HPP
-#define THREADPOOL_HPP
 
 
 class ThreadPool {
 
-
+    public:
     ThreadPool(const int threads_cnt = max_threads);
     void Worker();
     void AddTask(const std::function<void()> & task);
